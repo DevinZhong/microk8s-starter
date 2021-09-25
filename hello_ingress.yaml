@@ -7,7 +7,8 @@ spec:
   # - host: "nginx.way2hacker.com"
   - http:
       paths:
-      - path: /
+      - pathType: Prefix
+        path: /
         backend:
           service:
             name: nginx
@@ -16,7 +17,8 @@ spec:
   - host: "nginx123.way2hacker.com"
     http:
       paths:
-      - path: /
+      - pathType: Prefix
+        path: /
         backend:
           service:
             name: nginx
