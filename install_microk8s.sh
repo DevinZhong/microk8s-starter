@@ -10,4 +10,7 @@ docker tag registry.cn-hangzhou.aliyuncs.com/google_containers/pause:3.1 k8s.gcr
 docker save k8s.gcr.io/pause:3.1 > pause.tar
 microk8s ctr image import pause.tar
 
-microk8s.enable dns ingress
+microk8s.enable dns ingress dashboard
+
+# 删除
+# sudo snap remove microk8s
