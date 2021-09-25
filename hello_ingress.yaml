@@ -4,18 +4,22 @@ metadata:
   name: http-ingress
 spec:
   rules:
-  - host: "nginx.way2hacker.com"
-    http:
+  # - host: "nginx.way2hacker.com"
+  - http:
       paths:
       - path: /
         backend:
-          serviceName: nginx
-          servicePort: 80
+          service:
+            name: nginx
+            port:
+              number: 80
   - host: "nginx123.way2hacker.com"
     http:
       paths:
       - path: /
         backend:
-          serviceName: nginx
-          servicePort: 80
+          service:
+            name: nginx
+            port:
+              number: 80
           
