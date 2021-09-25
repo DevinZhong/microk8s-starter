@@ -1,11 +1,11 @@
-apiVersion: networking.k8s.io/v1beta1
+apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: http-ingress
 spec:
   rules:
-  - host: "nginx.way2hacker.com"
-    http:
+  # - host: "nginx.way2hacker.com"
+  - http:
       paths:
       - path: /
         backend:
