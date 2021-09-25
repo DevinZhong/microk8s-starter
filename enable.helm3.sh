@@ -28,7 +28,9 @@ then
   run_with_sudo tar -xf "$SNAP_DATA/tmp/helm/helm.tar")
 
   run_with_sudo mkdir -p "$SNAP_DATA/bin/"
-  run_with_sudo mv "$SNAP_DATA/tmp/helm/linux-$(arch)/helm" "$SNAP_DATA/bin/helm3"
+  # $(arch)改成了amd64
+  run_with_sudo mv "$SNAP_DATA/tmp/helm/linux-amd64/helm" "$SNAP_DATA/bin/helm3"
+#   run_with_sudo mv "$SNAP_DATA/tmp/helm/linux-$(arch)/helm" "$SNAP_DATA/bin/helm3"
   run_with_sudo chmod +x "$SNAP_DATA/bin/"
   run_with_sudo chmod +x "$SNAP_DATA/bin/helm3"
 
