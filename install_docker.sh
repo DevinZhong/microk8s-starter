@@ -8,11 +8,15 @@ EOF
 
 dockerd-rootless-setuptool.sh install
 
-# export DOCKER_HOST=unix:///run/user/1001/docker.sock
+sudo bash -c "cat <<EOF >> /home/$USER/.bashrc
+export DOCKER_HOST=unix:///run/user/1000/docker.sock
+EOF"
+export DOCKER_HOST=unix:///run/user/1000/docker.sock
 
 sudo tee /etc/docker/daemon.json <<-'EOF'
 {
-  "registry-mirrors": ["https://dxjrwa8b.mirror.aliyuncs.com"]
+  "registry-mirrors": ["https://dxjrwa8b.mirror.aliyuncs.com"],
+  "insecure-registries" : ["localhost:32000"]
 }
 EOF
 sudo systemctl daemon-reload

@@ -5,4 +5,5 @@
 # 重启 sshd 服务：
 # service sshd restart
 
+# 本地执行
 ssh-copy-id -i ~/.ssh/id_rsa.pub way2hacker.com
