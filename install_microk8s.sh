@@ -1,10 +1,14 @@
 #!/bin/bash
 
 # 修改hostname
-sudo hostname way2hacker.com
-sudo bash -c "cat <<EOF > /etc/hostname
-way2hacker.com
-EOF"
+CURRENT_HOSTNAME=$(hostname)
+NEW_HOSTNAME="way2hacker.com"
+sudo tee /etc/hostname <<-EOF
+$NEW_HOSTNAME
+EOF
+sudo sed -i "s/$CURRENT_HOSTNAME/$NEW_HOSTNAME/g" /etc/hosts
+sudo hostname $NEW_HOSTNAME
+exec bash
 
 # 安装 microk8s
 sudo snap install microk8s --classic
