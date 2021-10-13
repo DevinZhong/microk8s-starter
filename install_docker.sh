@@ -1,5 +1,5 @@
 #!/bin/bash
-curl -fsSL https://get.docker.com | bash -s docker --mirror Aliyun
+curl -fSL https://get.docker.com | bash -s docker --mirror Aliyun
 
 sudo sh -eux <<EOF
 # Install newuidmap & newgidmap binaries

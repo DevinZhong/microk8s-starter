@@ -16,3 +16,6 @@ sudo tee -a ~/.bashrc <<-'EOF'
 [[ $PATH =~ "/snap/bin" ]] || PATH="$PATH:/snap/bin"
 EOF
 exec bash
+
+sudo snap install snap-store-proxy
+sudo snap install snap-store-proxy-client
