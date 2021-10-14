@@ -18,5 +18,4 @@ sudo tee -a ~/.bashrc <<-'EOF'
 EOF
 exec bash
 
-sudo snap install snap-store-proxy
-sudo snap install snap-store-proxy-client
+sudo snap install snap-store-proxy snap-store-proxy-client
