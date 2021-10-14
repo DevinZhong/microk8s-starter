@@ -15,5 +15,6 @@ curl -SL https://winter-glitter.devinzhong.workers.dev/DevinZhong/microk8s-start
 exec bash
 curl -SL https://winter-glitter.devinzhong.workers.dev/DevinZhong/microk8s-starter/main/install_docker.sh | /bin/bash -l -
 exec bash
+newgrp docker
 curl -SL https://winter-glitter.devinzhong.workers.dev/DevinZhong/microk8s-starter/main/install_microk8s.sh | /bin/bash -l -
 newgrp microk8s
