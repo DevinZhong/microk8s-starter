@@ -12,9 +12,6 @@ sudo apt autoremove -y
 # PATH=\"$PATH\"
 # EOF"
 
-echo '------------------'
-echo $USER
-
 sudo tee -a ~/.bashrc <<-'EOF'
 
 # 把 /snap/bin 加入 PATH
@@ -22,4 +19,4 @@ sudo tee -a ~/.bashrc <<-'EOF'
 EOF
 exec bash
 
-sudo snap install snap-store-proxy snap-store-proxy-client
+# sudo snap install snap-store-proxy snap-store-proxy-client
