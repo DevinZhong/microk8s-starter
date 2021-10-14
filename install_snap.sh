@@ -2,6 +2,7 @@
 
 # 安装 snap
 sudo apt-get update
+sudo apt autoremove -y
 sudo apt-get install snapd
 
 # 设置环境变量
