@@ -24,6 +24,9 @@ export DOCKER_HOST=unix:///run/user/1000/docker.sock
 EOF
 exec bash
 
+sudo usermod -aG docker $USER
+newgrp docker
+
 # 使用阿里镜像加速器
 sudo tee /etc/docker/daemon.json <<-'EOF'
 {
