@@ -11,6 +11,9 @@ sudo apt-get install snapd
 # PATH=\"$PATH\"
 # EOF"
 
+echo '------------------'
+echo $USER
+
 sudo tee -a ~/.bashrc <<-'EOF'
 
 # 把 /snap/bin 加入 PATH
