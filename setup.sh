@@ -11,10 +11,8 @@ sudo tee -a /etc/hosts <<-'EOF'
 104.19.28.207 winter-glitter.devinzhong.workers.dev
 EOF
 
-curl -SL https://winter-glitter.devinzhong.workers.dev/DevinZhong/microk8s-starter/main/install_snap.sh | /bin/bash -l -
+curl -SL https://winter-glitter.devinzhong.workers.dev/DevinZhong/microk8s-starter/main/install_snap.sh | /bin/bash
 exec bash
-curl -SL https://winter-glitter.devinzhong.workers.dev/DevinZhong/microk8s-starter/main/install_docker.sh | /bin/bash -l -
+curl -SL https://winter-glitter.devinzhong.workers.dev/DevinZhong/microk8s-starter/main/install_docker.sh | /bin/bash
 exec bash
-newgrp docker
-curl -SL https://winter-glitter.devinzhong.workers.dev/DevinZhong/microk8s-starter/main/install_microk8s.sh | /bin/bash -l -
-newgrp microk8s
+curl -SL https://winter-glitter.devinzhong.workers.dev/DevinZhong/microk8s-starter/main/install_microk8s.sh | /bin/bash

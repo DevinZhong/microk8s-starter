@@ -4,7 +4,6 @@
 sudo apt-get update
 sudo apt-get install snapd
 snap --version
-sudo apt autoremove -y
 
 # 设置环境变量
 # PATH=$PATH:/snap/bin
