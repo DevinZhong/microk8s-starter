@@ -15,6 +15,7 @@ sudo snap install microk8s --classic
 sudo snap alias microk8s.kubectl kubectl
 sudo usermod -a -G microk8s $USER
 sudo chown -f -R $USER ~/.kube
+exec bash
 
 # 手动拉取 k8s.gcr.io/pause:3.1
 newgrp docker
@@ -25,6 +26,12 @@ newgrp microk8s
 microk8s ctr image import pause.tar
 
 # microk8s.enable dns ingress dashboard
+
+# docker pull bitnami/metrics-server:0.5.0
+# docker tag bitnami/metrics-server:0.5.0 k8s.gcr.io/metrics-server/metrics-server:v0.5.0
+# docker save k8s.gcr.io/metrics-server/metrics-server:v0.5.0 > metrics-server.tar
+# newgrp microk8s
+# microk8s ctr image import metrics-server.tar
 
 # 删除
 # sudo snap remove microk8s
