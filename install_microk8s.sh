@@ -15,15 +15,7 @@ sudo snap alias microk8s.kubectl kubectl
 sudo usermod -a -G microk8s $USER
 sudo chown -f -R $USER ~/.kube
 newgrp microk8s
-source ~/.bashrc
-echo $PATH
-which microk8s
 
-
-newgrp docker
-source ~/.bashrc
-echo $PATH
-which microk8s
 # 手动拉取 k8s.gcr.io/pause:3.1
 docker pull registry.cn-hangzhou.aliyuncs.com/google_containers/pause:3.1
 docker tag registry.cn-hangzhou.aliyuncs.com/google_containers/pause:3.1 k8s.gcr.io/pause:3.1

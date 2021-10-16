@@ -3,7 +3,6 @@
 # 安装 snap
 sudo apt-get update
 sudo apt-get install snapd
-snap --version
 
 sudo tee -a ~/.bashrc <<-'EOF'
 
