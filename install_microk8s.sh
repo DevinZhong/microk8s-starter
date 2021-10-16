@@ -15,6 +15,7 @@ sudo snap alias microk8s.kubectl kubectl
 sudo usermod -a -G microk8s $USER
 sudo chown -f -R $USER ~/.kube
 newgrp microk8s
+source ~/.bashrc
 
 newgrp docker
 # 手动拉取 k8s.gcr.io/pause:3.1
