@@ -22,7 +22,7 @@ sudo tee -a ~/.bashrc <<-'EOF'
 # 设置 DOCKER_HOST
 export DOCKER_HOST=unix:///run/user/1000/docker.sock
 EOF
-exec bash
+source ~/.bashrc
 
 sudo usermod -aG docker $USER
 newgrp docker
