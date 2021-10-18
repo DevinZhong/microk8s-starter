@@ -34,8 +34,14 @@ newgrp microk8s << EOF
 microk8s.ctr image import pause.tar
 microk8s.ctr image import ingress-nginx-controller.tar
 microk8s.ctr image import metrics-server.tar
-microk8s.enable dns ingress dashboard
-kubectl port-forward -n kube-system service/kubernetes-dashboard 10443:443 --address 0.0.0.0
+# microk8s.enable dns
+# microk8s.enable dashboard
+# microk8s.enable ingress
+# kubectl create secret tls ingress-tls-secret \
+#   --cert=./secret/ingress-tls-secret.crt \
+#   --key=./secret/ingress-tls-secret.key
+# microk8s.enable ingress:default-ssl-certificate=ingress-tls-secret
+# kubectl port-forward -n kube-system service/kubernetes-dashboard 10443:443 --address 0.0.0.0
 EOF
 
 # 删除
