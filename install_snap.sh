@@ -11,4 +11,7 @@ sudo tee -a ~/.bashrc <<-'EOF'
 EOF
 source ~/.bashrc
 
-# sudo snap install snap-store-proxy snap-store-proxy-client
+# 安装代理，不一定有用
+sudo snap install snap-store
+sudo snap install snap-store-proxy
+sudo snap install snap-store-proxy-client
