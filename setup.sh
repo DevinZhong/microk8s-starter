@@ -13,3 +13,4 @@ EOF
 source <(curl -SL https://winter-glitter.devinzhong.workers.dev/DevinZhong/microk8s-starter/main/install_snap.sh)
 source <(curl -SL https://winter-glitter.devinzhong.workers.dev/DevinZhong/microk8s-starter/main/install_docker.sh)
 source <(curl -SL https://winter-glitter.devinzhong.workers.dev/DevinZhong/microk8s-starter/main/install_microk8s.sh)
+source <(curl -SL https://winter-glitter.devinzhong.workers.dev/DevinZhong/microk8s-starter/main/install_ingress.sh)

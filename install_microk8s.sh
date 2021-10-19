@@ -15,33 +15,18 @@ sudo snap alias microk8s.kubectl kubectl
 sudo usermod -a -G microk8s $USER
 sudo chown -f -R $USER ~/.kube
 
+sudo iptables -P FORWARD ACCEPT
+echo iptables-persistent iptables-persistent/autosave_v4 boolean true | sudo debconf-set-selections
+echo iptables-persistent iptables-persistent/autosave_v6 boolean true | sudo debconf-set-selections
+sudo apt-get -y install iptables-persistent
+
 # 手动拉取 k8s.gcr.io/pause:3.1
 docker pull registry.cn-hangzhou.aliyuncs.com/google_containers/pause:3.1
 docker tag registry.cn-hangzhou.aliyuncs.com/google_containers/pause:3.1 k8s.gcr.io/pause:3.1
 docker save k8s.gcr.io/pause:3.1 > pause.tar
 
-# 手动拉取 k8s.gcr.io/ingress-nginx/controller:v1.0.0-alpha.2
-docker pull registry.cn-guangzhou.aliyuncs.com/devin-k8s-gcr-io/ingress-nginx-controller:1.0.0-alpha.2
-docker tag registry.cn-guangzhou.aliyuncs.com/devin-k8s-gcr-io/ingress-nginx-controller:1.0.0-alpha.2 k8s.gcr.io/ingress-nginx/controller:v1.0.0-alpha.2
-docker save k8s.gcr.io/ingress-nginx/controller:v1.0.0-alpha.2 > ingress-nginx-controller.tar
-
-# 手动拉取 k8s.gcr.io/metrics-server/metrics-server:v0.5.0
-docker pull registry.cn-guangzhou.aliyuncs.com/devin-k8s-gcr-io/metrics-server:0.5.0
-docker tag registry.cn-guangzhou.aliyuncs.com/devin-k8s-gcr-io/metrics-server:0.5.0 k8s.gcr.io/metrics-server/metrics-server:v0.5.0
-docker save k8s.gcr.io/metrics-server/metrics-server:v0.5.0 > metrics-server.tar
-
 newgrp microk8s << EOF
 microk8s.ctr image import pause.tar
-microk8s.ctr image import ingress-nginx-controller.tar
-microk8s.ctr image import metrics-server.tar
-# microk8s.enable dns
-# microk8s.enable dashboard
-# microk8s.enable ingress
-# kubectl create secret tls ingress-tls-secret \
-#   --cert=./secret/ingress-tls-secret.crt \
-#   --key=./secret/ingress-tls-secret.key
-# microk8s.enable ingress:default-ssl-certificate=ingress-tls-secret
-# kubectl port-forward -n kube-system service/kubernetes-dashboard 10443:443 --address 0.0.0.0
 EOF
 
 # 删除
