@@ -10,6 +10,6 @@ source <(curl -SL https://raw.githubusercontent.com/DevinZhong/microk8s-starter/
 # (optional) ingress example
 source <(curl -SL https://raw.githubusercontent.com/DevinZhong/microk8s-starter/main/hello-ingress/hello-ingress.sh)
 
-# (optional) enable dashboard
+# (optional, dependent ingress) enable dashboard
 source <(curl -SL https://raw.githubusercontent.com/DevinZhong/microk8s-starter/main/dashboard/enable_dashbaord.sh)
 ```

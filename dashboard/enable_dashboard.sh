@@ -11,3 +11,7 @@ microk8s.enable dashboard
 EOF
 
 kubectl apply -f https://winter-glitter.devinzhong.workers.dev/DevinZhong/microk8s-starter/main/dashboard/dashboard-ingress.yaml
+
+# 获取页面访问 token
+# token=$(microk8s kubectl -n kube-system get secret | grep default-token | cut -d " " -f1)
+# microk8s kubectl -n kube-system describe secret $token
