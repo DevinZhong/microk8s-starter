@@ -9,8 +9,5 @@ docker save k8s.gcr.io/ingress-nginx/controller:v1.0.0-alpha.2 > ingress-nginx-c
 
 newgrp microk8s << EOF
 microk8s.ctr image import ingress-nginx-controller.tar
-kubectl create secret tls ingress-tls-secret \
-  --cert=./secret/ingress-tls-secret.crt \
-  --key=./secret/ingress-tls-secret.key
-microk8s.enable ingress:default-ssl-certificate=default/ingress-tls-secret
+microk8s.enable ingress
 EOF
