@@ -10,7 +10,7 @@ spec:
   tls:
     - hosts:
         - nginx.k8s.way2hacker.com
-      secretName: ingress-tls-secret
+      secretName: nginx-tls-secret
   rules:
     - host: nginx.k8s.way2hacker.com
       http:
