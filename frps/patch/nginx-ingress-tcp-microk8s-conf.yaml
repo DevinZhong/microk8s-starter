@@ -6,3 +6,6 @@ metadata:
 data:
   7000: "default/frps:7000"
   7777: "default/frps:7777"
+  7778: "default/frps:7778"
+  7779: "default/frps:7779"
+  7780: "default/frps:7780"

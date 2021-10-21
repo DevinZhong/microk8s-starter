@@ -17,3 +17,15 @@ spec:
           containerPort: 7777
           hostPort: 7777
           protocol: TCP
+        - name: frps-tcp-7778
+          containerPort: 7778
+          hostPort: 7778
+          protocol: TCP
+        - name: frps-tcp-7779
+          containerPort: 7779
+          hostPort: 7779
+          protocol: UDP
+        - name: frps-tcp-7780
+          containerPort: 7780
+          hostPort: 7780
+          protocol: UDP

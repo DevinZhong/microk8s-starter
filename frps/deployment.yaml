@@ -21,6 +21,9 @@ spec:
         ports:
         - containerPort: 7000
         - containerPort: 7777
+        - containerPort: 7778
+        - containerPort: 7779
+        - containerPort: 7780
         - containerPort: 80
         volumeMounts:
         - mountPath: /etc/frp

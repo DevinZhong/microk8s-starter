@@ -15,6 +15,18 @@ spec:
     port: 7777
     protocol: TCP
     targetPort: 7777
+  - name: frps7778
+    port: 7778
+    protocol: TCP
+    targetPort: 7778
+  - name: frps7779
+    port: 7779
+    protocol: UDP
+    targetPort: 7779
+  - name: frps7780
+    port: 7780
+    protocol: UDP
+    targetPort: 7780
   - name: frps-web
     port: 80
     protocol: TCP

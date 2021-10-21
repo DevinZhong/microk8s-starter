@@ -12,4 +12,7 @@ source <(curl -SL https://raw.githubusercontent.com/DevinZhong/microk8s-starter/
 
 # (optional, dependent ingress) enable dashboard
 source <(curl -SL https://raw.githubusercontent.com/DevinZhong/microk8s-starter/main/dashboard/enable_dashbaord.sh)
+
+# (optional, dependent ingress) install frps
+source <(curl -SL https://raw.githubusercontent.com/DevinZhong/microk8s-starter/main/frps/install.sh)
 ```

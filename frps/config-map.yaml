@@ -9,5 +9,6 @@ data:
     bind_port = 7000
     token=WXYeXd^u%d2L2BK@oqwv
     vhost_http_port = 80
-    allow_ports = 7770-7780
+    # 7777-7778 建立TCP连接，7779-7780 建立UDP连接
+    allow_ports = 7777-7780
     log_level = info
