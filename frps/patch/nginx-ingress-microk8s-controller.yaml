@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: DaemonSet
+metadata:
+  name: nginx-ingress-microk8s-controller
+  namespace: ingress
+spec:
+  template:
+    spec:
+      containers:
+      - name: nginx-ingress-microk8s
+        ports:
+        - name: frps-tcp-7000
+          containerPort: 7000
+          hostPort: 7000
+          protocol: TCP
+        - name: frps-tcp-7777
+          containerPort: 7777
+          hostPort: 7777
+          protocol: TCP

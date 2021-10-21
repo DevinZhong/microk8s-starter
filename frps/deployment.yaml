@@ -1,0 +1,36 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  namespace: default
+  labels:
+    app: frps
+  name: frps
+spec:
+  selector:
+    matchLabels:
+      app: frps
+  template:
+    metadata:
+      labels:
+        app: frps
+    spec:
+      containers:
+      - image: snowdreamtech/frps:0.37.1
+        imagePullPolicy: IfNotPresent
+        name: frps
+        ports:
+        - containerPort: 7000
+        - containerPort: 7777
+        - containerPort: 80
+        volumeMounts:
+        - mountPath: /etc/frp
+          name: frps-config-volumn
+      volumes:
+      - configMap:
+          defaultMode: 256
+          items:
+          - key: frps.ini
+            path: frps.ini
+          name: frps
+          optional: false
+        name: frps-config-volumn

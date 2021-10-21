@@ -1,0 +1,21 @@
+apiVersion: v1
+kind: Service
+metadata:
+  namespace: default
+  name: frps
+spec:
+  selector:
+    app: frps
+  ports:
+  - name: frps7000
+    port: 7000
+    protocol: TCP
+    targetPort: 7000
+  - name: frps7777
+    port: 7777
+    protocol: TCP
+    targetPort: 7777
+  - name: frps-web
+    port: 80
+    protocol: TCP
+    targetPort: 80

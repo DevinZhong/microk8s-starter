@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  namespace: default
+  name: frps
+data:
+  frps.ini: |-
+    [common]
+    bind_port = 7000
+    token=WXYeXd^u%d2L2BK@oqwv
+    vhost_http_port = 80
+    allow_ports = 7770-7780
+    log_level = info
