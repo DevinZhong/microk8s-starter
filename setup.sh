@@ -8,6 +8,7 @@ sudo tee -a /etc/hosts <<-'EOF'
 
 # cloudflare 地址
 104.19.28.207 winter-glitter.devinzhong.workers.dev
+104.19.28.207 floral-dream.devinzhong.workers.dev
 EOF
 
 source <(curl -SL https://winter-glitter.devinzhong.workers.dev/DevinZhong/microk8s-starter/main/install_snap.sh)
